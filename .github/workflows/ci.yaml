@@ -103,8 +103,7 @@ jobs:
       with:
         context: .
         load: true
-        tags: ${COMPONENT}:latest
-
+        tags: ${{ github.ref }}-image:latest
   # Optional: Deploy to container registry
   # Uncomment and configure as needed
   # deploy:

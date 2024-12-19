@@ -76,7 +76,7 @@ jobs:
     - name: Upload Bandit scan results to Github Code Scanning
       uses: github/codeql-action/upload-sarif@v2
         with:
-          sarif_file: bandit-report.sarif
+        sarif_file: bandit-report.sarif
 
     - name: Exit if Bandit fails
       run: | 

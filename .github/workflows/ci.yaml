@@ -79,10 +79,10 @@ jobs:
         sarif_file: bandit-report.sarif
 
     - name: Exit if Bandit fails
-        run: |
-          if [ -n "$BANDIT_FAIL" ]; then
-            exit 1
-          fi
+      run: |
+        if [ -n "$BANDIT_FAIL" ]; then
+          exit 1
+        fi
 
 
   docker-build:

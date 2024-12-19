@@ -71,15 +71,15 @@ jobs:
         #New code starts here
    
     - name: Run Bandit security scanner
-            run: bandit -r . -f sarif -o bandit-report.sarif || echo "BANDIT_FAIL=true" >> "$GITHUB_ENV"
+      run: bandit -r . -f sarif -o bandit-report.sarif || echo "BANDIT_FAIL=true" >> "$GITHUB_ENV"
 
     - name: Upload Bandit scan results to Github Code Scanning
-        uses: github/codeql-action/upload-sarif@v2
-            with:
-                  sarif_file: bandit-report.sarif
+      uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: bandit-report.sarif
 
     - name: Exit if Bandit fails
-        run: | 
+      run: | 
               if [ -n "$BANDIT_FAIL" ]; then
                     exit 1 
                         fi

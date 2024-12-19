@@ -103,8 +103,9 @@ jobs:
       with:
         context: .
         load: true
-        tags: ${{ github.ref }}-image:latest
-  # Optional: Deploy to container registry
+        tags: ${{env.COMPONENT}}:latest
+          
+          # Optional: Deploy to container registry
   # Uncomment and configure as needed
   # deploy:
   #   needs: [lint-and-test, docker-build-and-scan, security-scan]
